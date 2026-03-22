@@ -1,188 +1,70 @@
-# Website Design Replication
+# CLAUDE.md
 
-Tu objetivo es replicar fielmente el diseño visual de un sitio web a partir de una imagen de referencia, siguiendo buenas prácticas de estructura de proyecto, separación de responsabilidades y componentes reutilizables.
+Este archivo proporciona orientación a Claude Code (claude.ai/code) cuando trabaja con el código de este repositorio.
 
----
+## Descripción del proyecto
 
-## Lo que el usuario puede darte
+Accuat es un sitio de marketing estático sin proceso de build, sin gestor de paquetes y sin test runner. Abre cualquier archivo `.html` directamente en el navegador o sírvelo con cualquier servidor estático (ej. `npx serve .` o VS Code Live Server).
 
-- **Imagen de referencia** (obligatorio): screenshot o foto del diseño a replicar.
-- **Notas de CSS / estilo** (opcional): clases, colores hex, fuentes, espaciados concretos.
-- **Sección específica** (opcional): puede pedirte que repliques solo una parte de la página.
+## Arquitectura CSS — dos sistemas coexisten
 
----
+Cada página carga **dos capas de CSS**:
 
-## Estructura del proyecto
+1. **Tailwind CDN** (`<script src="https://cdn.tailwindcss.com">`) — clases utilitarias inline en el HTML. Sin archivo de config, por lo que el prefijo `dark:` y las features JIT no están disponibles.
+2. **`assets/css/shared-page.css`** — utilidades custom cargadas en todas las páginas: clases de animación (`.floating`, `.floating-slow`), fondos degradados (`.bg-hero-gradient`, `.bg-dark-panel`), los overrides de Tailwind para dark mode y las reglas de los iconos del toggle de tema.
 
-Crea siempre esta estructura antes de escribir código:
+> **Importante:** `assets/css/main.css` existe e importa todos los archivos CSS de componentes BEM, pero **ninguna página carga `main.css`**. Los archivos BEM (`navbar.css`, `hero.css`, etc.) son artefactos de referencia/desarrollo; las páginas reales están estilizadas exclusivamente con Tailwind + `shared-page.css`.
 
-```
-proyecto/
-├── index.html              # Entrada principal — solo estructura, sin estilos inline
-├── assets/
-│   ├── css/
-│   │   ├── main.css        # Estilos globales, variables CSS, reset
-│   │   └── components/
-│   │       ├── buttons.css
-│   │       ├── cards.css
-│   │       ├── forms.css
-│   │       ├── navbar.css
-│   │       └── footer.css
-│   ├── js/
-│   │   ├── main.js         # Inicialización y lógica global
-│   │   └── components/
-│   │       ├── navbar.js   # Menú hamburguesa, scroll behavior, etc.
-│   │       └── ui.js       # Interacciones de UI (modales, tabs, tooltips…)
-│   └── img/
-│       └── placeholder/    # Imágenes de placeholder durante desarrollo
-├── components/             # Fragmentos HTML reutilizables (documentados)
-│   ├── navbar.html
-│   ├── hero.html
-│   ├── cards.html
-│   ├── buttons.html
-│   └── footer.html
-└── CLAUDE.md
-```
+`assets/css/components/forms.css` se carga por separado en `login.html` y `signup.html`.
 
-> Si el proyecto usa un framework (Next.js, Astro, etc.), adapta la estructura al estándar del framework manteniendo la misma separación de responsabilidades.
+## Sistema de dark mode
 
----
+El dark mode usa dos mecanismos combinados:
 
-## Reglas de implementación
+- **Preferencia del OS:** `@media (prefers-color-scheme: dark)` en CSS, acotado a `html:not([data-theme="light"])` para que el override de forzar-claro funcione.
+- **Toggle manual:** atributos `html[data-theme="dark"]` / `html[data-theme="light"]`. Se persiste en `localStorage` bajo la clave `accuat-theme`.
 
-### HTML
-- `index.html` solo contiene estructura semántica. Sin estilos inline, sin `<style>` embebido.
-- Usa etiquetas semánticas: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`.
-- Atributo `lang` en `<html>`, `alt` descriptivo en todas las imágenes, `<title>` único por página.
-- Estructura de headings en orden: un solo `<h1>` por página, `<h2>` para secciones, etc.
+Los overrides de dark mode viven en tres lugares:
+1. `main.css` — tokens de variables CSS (`--color-bg`, `--color-surface`, etc.)
+2. `shared-page.css` — overrides de clases Tailwind (`bg-white`, `bg-gray-50`, `bg-white/80`, colores de texto, bordes)
+3. Archivos CSS de componentes individuales (`cards.css`, `hero.css`, `invoice-demo.css`, `currency.css`) — overrides específicos de cada componente
 
-### CSS
-- Define **variables CSS** en `:root` para todos los valores del diseño:
-  ```css
-  :root {
-    --color-primary: #3b82f6;
-    --color-text: #1f2937;
-    --font-base: 'Inter', sans-serif;
-    --spacing-section: 5rem;
-    --radius-card: 0.75rem;
-  }
-  ```
-- Usa `main.css` para importar los archivos de componentes con `@import`.
-- Cada componente visual tiene su propio archivo CSS en `assets/css/components/`.
-- Metodología de naming: **BEM** (`block__element--modifier`) para clases propias.
-- Unidades relativas (`rem`, `%`, `vw/vh`, `clamp()`) salvo para bordes y sombras (px está bien).
-- Mobile-first: estilos base para móvil, `@media (min-width: …)` para breakpoints mayores.
+Al agregar nuevas reglas de dark mode, añadirlas en **ambos** bloques: dentro del `@media` (preferencia del OS) y en el bloque `html[data-theme="dark"]` (toggle manual). Usar `html:not([data-theme="light"])` dentro del media query.
 
-### Componentes reutilizables
+Prevención de flash: el `<head>` de cada página tiene un script inline antes de Tailwind que lee `localStorage` y setea `data-theme` de inmediato.
 
-Documenta cada componente en `components/` con sus variantes. Ejemplo para botones:
+## JavaScript
 
-```html
-<!-- components/buttons.html -->
+`assets/js/main.js` — se carga al final del `<body>` en todas las páginas. Expone la función global `toggleTheme()` y agrega la clase `js-loaded` al `<html>`.
 
-<!-- Variante primaria -->
-<button class="btn btn--primary">Acción principal</button>
+`assets/js/components/ui.js` — se carga con `defer` en páginas con formularios interactivos. Maneja: animaciones de scroll (IntersectionObserver sobre `.animate-on-scroll`), toggle de visibilidad de contraseña (`data-password-toggle="<input-id>"`), medidor de fortaleza de contraseña, formulario multi-paso de signup (`data-goto-step`) y prevención de submit en demos (`data-prevent-submit`).
 
-<!-- Variante secundaria -->
-<button class="btn btn--secondary">Acción secundaria</button>
+Los componentes interactivos se conectan al JS mediante atributos `data-*`, no por `id` ni selectores de clase.
 
-<!-- Variante destructiva -->
-<button class="btn btn--danger">Eliminar</button>
+## Checklist para nueva página
 
-<!-- Estado deshabilitado -->
-<button class="btn btn--primary" disabled>No disponible</button>
-```
+Copiar `components/page-template.html`. Orden obligatorio en `<head>`:
+1. Script inline de inicialización de tema (prevención de flash)
+2. `<script src="https://cdn.tailwindcss.com">`
+3. `<link rel="stylesheet" href="assets/css/shared-page.css">`
+4. Opcional: `forms.css` (si la página tiene formularios)
 
-Componentes mínimos a definir según lo que aparezca en la imagen de referencia:
-- **Botones**: primario, secundario, ghost, destructivo, con icono, estados (hover, focus, disabled).
-- **Cards**: con imagen, sin imagen, con badge, con acciones.
-- **Formularios**: inputs, selects, checkboxes, radio buttons, mensajes de error/éxito.
-- **Navbar**: con logo, links de navegación, CTA, menú móvil.
-- **Footer**: columnas de links, copyright, redes sociales.
+Al final del `<body>`:
+1. `<script src="assets/js/main.js">`
+2. Opcional: `<script src="assets/js/components/ui.js" defer>`
 
-### JavaScript
-- Vanilla JS por defecto, salvo que el proyecto especifique un framework.
-- Sin lógica en el HTML (`onclick="…"` está prohibido). Usa `addEventListener` desde los archivos JS.
-- Cada componente con comportamiento interactivo tiene su módulo en `assets/js/components/`.
+Patrón de fondos por sección: `bg-hero-gradient` → alternar `bg-white` / `bg-gray-50` → `bg-dark-panel` para CTA → `bg-gray-950` para footer.
 
-### Imágenes de placeholder
-- Usa `https://placehold.co/{ancho}x{alto}/{color-fondo}/{color-texto}` con dimensiones exactas.
-- Guarda los placeholders usados en `assets/img/placeholder/` con nombres descriptivos.
+Link activo en la nav: `class="text-black font-semibold"`. Inactivo: `class="hover:text-black transition-colors"`.
 
----
+## Reglas detalladas
 
-## Workflow de replicación
-
-### Paso 1 — Analiza la imagen antes de escribir código
-
-Antes de crear ningún archivo, describe en voz alta lo que ves:
-- Secciones presentes (hero, features, pricing, testimonials, footer…)
-- Paleta de colores (extrae los hex principales)
-- Tipografía (familia, tamaños aproximados, pesos)
-- Componentes reutilizables identificados (botones, cards, badges…)
-- Layout general (1 columna, grid, sidebar…)
-
-Si el usuario aportó notas de CSS, incorpóralas. Tienen prioridad sobre tu estimación visual.
-
-### Paso 2 — Crea la estructura del proyecto
-
-Genera todos los archivos y carpetas antes de escribir contenido. Un proyecto bien estructurado desde el inicio evita refactors costosos.
-
-### Paso 3 — Implementa de mayor a menor escala
-
-1. Variables CSS y estilos globales (`main.css`)
-2. Layout principal (`index.html` + estructura de secciones)
-3. Componentes de mayor a menor: navbar → hero → secciones de contenido → footer
-4. Interacciones JS al final, cuando el HTML/CSS esté estable
-
-### Paso 4 — Captura un screenshot del resultado
-
-```bash
-npx puppeteer screenshot index.html --fullpage
-```
-
-Si la página tiene secciones diferenciadas, captúralas también individualmente.
-
-### Paso 5 — Compara en detalle
-
-| Aspecto | Qué revisar |
-|---|---|
-| Espaciado y padding | Mide en px, sección a sección |
-| Tipografía | Tamaño, peso, line-height, familia |
-| Colores | Hex exactos: fondo, texto, bordes, sombras |
-| Alineación | Horizontal, vertical, centrado |
-| Bordes y efectos | border-radius, box-shadow, outline |
-| Componentes | ¿Los botones/cards/forms coinciden con la referencia? |
-| Responsive | ¿Se rompe algo al cambiar el viewport? |
-
-### Paso 6 — Corrige y repite
-
-- Corrige **todas** las diferencias detectadas antes de volver a capturar.
-- Repite el ciclo (captura → compara → corrige) hasta cumplir el criterio de parada.
-
----
-
-## Criterio de parada
-
-Haz siempre **mínimo 2 rondas completas** de comparación. Para cuando:
-
-- El resultado está dentro de **~2–3 px** de la referencia en toda la página, **o**
-- El usuario indica explícitamente que puede detenerse.
-
----
-
-## Reporte de progreso
-
-Después de cada ronda informa con este formato:
-
-```
-Ronda N — Comparación completada
-Diferencias encontradas:
-  - [descripción concreta, ej: "padding del hero 48px en referencia, 32px actual"]
-
-Correcciones aplicadas:
-  - [archivo editado + cambio, ej: "main.css → --spacing-hero: 3rem → 4rem"]
-
-Archivos modificados: [lista]
-Próximo paso: [re-captura / esperando confirmación / finalizado]
-```
+Las reglas extendidas para cada tipo de archivo están en `.claude/rules/`:
+- `css.md` — naming de tokens, decisiones Tailwind vs clase custom, patrón de dark mode
+- `html.md` — formato de título (`Página – Accuat`), orden de atributos, reglas de `alt`/`loading` en imágenes
+- `javascript.md` — regla de no usar handlers inline, requisitos de sincronización ARIA
+- `components.md` — convenciones de atributos `data-*`, catálogo de componentes
+- `accessibility.md` — contraste, visibilidad del foco, outlines en secciones oscuras
+- `page-template.md` — padding de secciones, convenciones de ancho máximo
+- `workflow.md` — ciclo captura → comparar → corregir (mínimo 2 rondas)
+- `git.md` — estilo de mensajes de commit, requisitos del `.gitignore`

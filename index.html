@@ -4,25 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Accuat – Get paid same day</title>
+  <script>(function(){var t=localStorage.getItem('accuat-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-    body { font-family: 'Inter', sans-serif; background: #f7fafc; }
-    .underline-accent { text-decoration: underline; text-underline-offset: 4px; }
-    .floating { animation: float 4s ease-in-out infinite; }
-    .floating-slow { animation: float 6s ease-in-out infinite; }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-    .sticky-note {
-      background: #fde68a;
-      transform: rotate(-3deg);
-      box-shadow: 2px 4px 12px rgba(0,0,0,0.15);
-    }
-    .card-shadow { box-shadow: 0 8px 40px rgba(0,0,0,0.10); }
-    .invoice-card { box-shadow: 0 12px 48px rgba(0,0,0,0.12); }
-  </style>
+  <link rel="stylesheet" href="assets/css/shared-page.css" />
 </head>
 <body class="antialiased">
 
@@ -38,13 +22,17 @@
       </div>
     </div>
     <div class="flex items-center gap-4">
+      <button onclick="toggleTheme()" class="w-8 h-8 flex items-center justify-center rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-colors" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon--sun" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.5"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="theme-toggle__icon--moon" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
       <a href="login.html" class="text-sm text-gray-600 hover:text-black transition-colors">Log in</a>
       <a href="signup.html" class="text-sm bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-black transition-colors font-medium">Sign up for free</a>
     </div>
   </nav>
 
   <!-- ====== HERO ====== -->
-  <section class="relative pt-28 pb-20 overflow-hidden" style="background: linear-gradient(160deg, #eef4fb 0%, #f7fafc 60%, #eef4fb 100%);">
+  <section class="relative pt-28 pb-20 overflow-hidden bg-hero-gradient">
 
     <!-- Floating decorative elements -->
     <div class="absolute top-24 left-10 floating-slow opacity-90">
@@ -107,12 +95,12 @@
       <div class="mt-10 pt-6 border-t border-gray-200/60">
         <p class="text-xs text-gray-400 mb-4 uppercase tracking-widest">Trusted by teams at</p>
         <div class="flex items-center justify-center gap-8 opacity-40">
-          <svg class="h-5" viewBox="0 0 60 20" fill="none"><text y="15" font-size="14" font-weight="700" fill="#555" font-family="sans-serif">stripe</text></svg>
-          <svg class="h-5" viewBox="0 0 70 20" fill="none"><text y="15" font-size="12" font-weight="700" fill="#555" font-family="sans-serif">shopify</text></svg>
-          <svg class="h-5" viewBox="0 0 55 20" fill="none"><text y="15" font-size="13" font-weight="700" fill="#555" font-family="sans-serif">notion</text></svg>
-          <svg class="h-5" viewBox="0 0 45 20" fill="none"><text y="15" font-size="13" font-weight="700" fill="#555" font-family="sans-serif">figma</text></svg>
-          <svg class="h-5" viewBox="0 0 50 20" fill="none"><text y="15" font-size="13" font-weight="700" fill="#555" font-family="sans-serif">linear</text></svg>
-          <svg class="h-5" viewBox="0 0 55 20" fill="none"><text y="15" font-size="13" font-weight="700" fill="#555" font-family="sans-serif">vercel</text></svg>
+          <a href="https://stripe.com" target="_blank" rel="noopener" aria-label="Stripe"><svg class="h-5" viewBox="0 0 60 20" fill="none"><text y="15" font-size="14" font-weight="700" fill="#555" font-family="sans-serif">stripe</text></svg></a>
+          <a href="https://shopify.com" target="_blank" rel="noopener" aria-label="Shopify"><svg class="h-5" viewBox="0 0 70 20" fill="none"><text y="15" font-size="12" font-weight="700" fill="#555" font-family="sans-serif">shopify</text></svg></a>
+          <a href="https://notion.so" target="_blank" rel="noopener" aria-label="Notion"><svg class="h-5" viewBox="0 0 55 20" fill="none"><text y="15" font-size="13" font-weight="700" fill="#555" font-family="sans-serif">notion</text></svg></a>
+          <a href="https://figma.com" target="_blank" rel="noopener" aria-label="Figma"><svg class="h-5" viewBox="0 0 45 20" fill="none"><text y="15" font-size="13" font-weight="700" fill="#555" font-family="sans-serif">figma</text></svg></a>
+          <a href="https://linear.app" target="_blank" rel="noopener" aria-label="Linear"><svg class="h-5" viewBox="0 0 50 20" fill="none"><text y="15" font-size="13" font-weight="700" fill="#555" font-family="sans-serif">linear</text></svg></a>
+          <a href="https://vercel.com" target="_blank" rel="noopener" aria-label="Vercel"><svg class="h-5" viewBox="0 0 55 20" fill="none"><text y="15" font-size="13" font-weight="700" fill="#555" font-family="sans-serif">vercel</text></svg></a>
         </div>
       </div>
     </div>
@@ -140,7 +128,7 @@
       <div class="flex items-start justify-center gap-8">
 
         <!-- Invoice Card Left: Marble Studio -->
-        <div class="invoice-card bg-white rounded-2xl w-72 overflow-hidden" style="transform: rotate(-2deg); margin-top: 24px;">
+        <div class="invoice-card bg-white rounded-2xl w-72 overflow-hidden invoice-tilt-left">
           <div class="px-5 pt-5 pb-3">
             <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">ONLINE</span>
             <h3 class="text-base font-bold text-gray-900 mt-3 mb-0.5">Marble Studio</h3>
@@ -167,7 +155,7 @@
 
         <!-- Invoice Card Right: Charm AI (with sticky note) -->
         <div class="relative">
-          <div class="invoice-card bg-white rounded-2xl w-72 overflow-hidden" style="transform: rotate(1.5deg);">
+          <div class="invoice-card bg-white rounded-2xl w-72 overflow-hidden invoice-tilt-right">
             <div class="px-5 pt-5 pb-3">
               <div class="flex items-center gap-2 mb-3">
                 <div class="w-7 h-7 rounded-full bg-green-500 flex items-center justify-center">
@@ -196,7 +184,7 @@
             </div>
           </div>
           <!-- Sticky note overlay -->
-          <div class="sticky-note absolute -top-4 -right-6 w-28 p-3 rounded-sm z-10" style="transform: rotate(4deg);">
+          <div class="sticky-note sticky-note--right absolute -top-4 -right-6 w-28 p-3 rounded-sm z-10">
             <p class="text-xs font-medium text-yellow-900 leading-snug">Just closed this for business! 🎉✨</p>
           </div>
         </div>
@@ -241,7 +229,7 @@
   </section>
 
   <!-- ====== CURRENCY ====== -->
-  <section class="py-24 text-center px-4" style="background: #f7fafc;">
+  <section class="py-24 text-center px-4 bg-gray-50">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-4xl font-extrabold text-gray-900 leading-snug">
         Euros, Dollars, Yens, USDC, USDT…<br/>
@@ -251,12 +239,12 @@
   </section>
 
   <!-- ====== MAP SECTION ====== -->
-  <section class="py-16 px-8" style="background: #f7fafc;">
+  <section class="py-16 px-8 bg-gray-50">
     <div class="max-w-5xl mx-auto relative">
       <div class="flex items-center justify-center gap-10 relative">
 
         <!-- Map Left (Buenos Aires style - grid city) -->
-        <div class="relative rounded-2xl overflow-hidden card-shadow border border-gray-200" style="width:320px; height:220px; transform: rotate(-1deg);">
+        <div class="relative rounded-2xl overflow-hidden card-shadow border border-gray-200 map-card map-card--left">
           <svg width="320" height="220" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
             <!-- Background -->
             <rect width="320" height="220" fill="#e8f4e8"/>
@@ -308,7 +296,7 @@
         </div>
 
         <!-- Dotted line connector with arrow -->
-        <div class="flex flex-col items-center gap-1 relative" style="width: 80px;">
+        <div class="flex flex-col items-center gap-1 relative w-20">
           <svg width="80" height="20" viewBox="0 0 80 20">
             <line x1="0" y1="10" x2="70" y2="10" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,4"/>
             <polygon points="70,6 80,10 70,14" fill="#94a3b8"/>
@@ -316,7 +304,7 @@
         </div>
 
         <!-- Map Right (Bangalore style - with water) -->
-        <div class="relative rounded-2xl overflow-hidden card-shadow border border-gray-200" style="width:320px; height:220px; transform: rotate(1deg);">
+        <div class="relative rounded-2xl overflow-hidden card-shadow border border-gray-200 map-card map-card--right">
           <svg width="320" height="220" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
             <rect width="320" height="220" fill="#e8f0f8"/>
             <!-- Water on right -->
@@ -437,7 +425,7 @@
   </section>
 
   <!-- ====== LETTER SECTION (dark) ====== -->
-  <section class="py-24 px-4 relative overflow-hidden" style="background: linear-gradient(135deg, #0a1628 0%, #0e2145 50%, #0a1628 100%);">
+  <section class="py-24 px-4 relative overflow-hidden bg-dark-gradient">
     <div class="max-w-2xl mx-auto relative">
       <!-- Letter card -->
       <div class="bg-white rounded-2xl p-10 relative invoice-card">
@@ -448,11 +436,11 @@
           <p class="text-gray-500 italic mt-6">Love you, pay me.</p>
         </div>
         <div class="mt-8 pt-4 border-t border-gray-100">
-          <p class="font-semibold text-sm text-gray-900" style="font-family: Georgia, serif; font-style: italic; font-size: 18px;">Bella Garcia</p>
+          <p class="font-semibold text-sm text-gray-900 signature-font">Bella Garcia</p>
           <p class="text-xs text-gray-400 mt-0.5">Founder, Accuat</p>
         </div>
         <!-- Sticky note on letter -->
-        <div class="sticky-note absolute -top-6 -right-6 w-28 p-3 rounded-sm" style="transform: rotate(5deg);">
+        <div class="sticky-note sticky-note--cta absolute -top-6 -right-6 w-28 p-3 rounded-sm">
           <p class="text-xs font-medium text-yellow-900 leading-snug">build for freelancers 🌟</p>
         </div>
       </div>
@@ -482,5 +470,6 @@
     </div>
   </footer>
 
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

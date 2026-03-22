@@ -45,7 +45,7 @@
 }
 
 .currency__map-card {
-  background: var(--color-white);
+  background: var(--color-surface);
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-xl);
   overflow: hidden;
@@ -125,7 +125,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-white);
+  background: var(--color-surface);
   border-radius: 50%;
   width: 36px;
   height: 36px;
@@ -144,6 +144,22 @@
   height: 2px;
   border-top: 2px dashed var(--color-blue-accent);
   opacity: 0.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .currency__map-placeholder {
+    background: linear-gradient(135deg, #0d1f35 0%, #1e293b 50%, #0f172a 100%);
+  }
+  html:not([data-theme="light"]) .currency__map-img {
+    background: #1e293b;
+  }
+}
+
+html[data-theme="dark"] .currency__map-placeholder {
+  background: linear-gradient(135deg, #0d1f35 0%, #1e293b 50%, #0f172a 100%);
+}
+html[data-theme="dark"] .currency__map-img {
+  background: #1e293b;
 }
 
 @media (max-width: 639px) {

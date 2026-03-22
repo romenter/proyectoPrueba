@@ -21,22 +21,31 @@
 ──────────────────────────────────────────────── */
 :root {
   /* Colors */
-  --color-bg:           #f7fafc;
-  --color-text:         #000000e6;
-  --color-text-muted:   #666666;
-  --color-text-light:   #999999;
-  --color-navy:         #004370;
-  --color-navy-dark:    #002a47;
-  --color-navy-deep:    #001e33;
-  --color-white:        #ffffff;
-  --color-black:        #000000;
-  --color-border:       #e2e8f0;
-  --color-border-light: #f0f4f8;
-  --color-green:        #22c55e;
-  --color-green-light:  #dcfce7;
-  --color-blue-accent:  #3b82f6;
-  --color-yellow:       #fbbf24;
-  --color-yellow-note:  #fde68a;
+  --color-bg:                   #f7fafc;
+  --color-text:                 #000000e6;
+  --color-text-muted:           #666666;
+  --color-text-light:           #999999;
+  --color-navy:                 #004370;
+  --color-navy-dark:            #002a47;
+  --color-navy-deep:            #001e33;
+  --color-white:                #ffffff;
+  --color-black:                #000000;
+  --color-surface:              #ffffff;
+  --color-border:               #e2e8f0;
+  --color-border-light:         #f0f4f8;
+  --color-green:                #22c55e;
+  --color-green-light:          #dcfce7;
+  --color-blue-accent:          #3b82f6;
+  --color-yellow:               #fbbf24;
+  --color-yellow-note:          #fde68a;
+
+  /* Overlay / interaction */
+  --color-overlay-hover:        rgba(0, 0, 0, 0.05);
+
+  /* Navbar backgrounds (rgba — need own tokens) */
+  --color-navbar-bg:            rgba(247, 250, 252, 0.85);
+  --color-navbar-bg-scrolled:   rgba(247, 250, 252, 0.95);
+  --color-navbar-mobile-bg:     rgba(247, 250, 252, 0.97);
 
   /* Typography */
   --font-base:          'Inter', sans-serif;
@@ -186,4 +195,80 @@ button {
 /* Only animate when JS is loaded */
 .js-loaded .animate-on-scroll {
   /* already set above */
+}
+
+/* ────────────────────────────────────────────────
+   Dark mode
+──────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:                   #0f172a;
+    --color-text:                 rgba(248, 250, 252, 0.90);
+    --color-text-muted:           #94a3b8;
+    --color-text-light:           #64748b;
+    --color-border:               #334155;
+    --color-border-light:         #1e293b;
+    --color-surface:              #1e293b;
+    --color-green-light:          rgba(34, 197, 94, 0.15);
+    --color-overlay-hover:        rgba(255, 255, 255, 0.08);
+    --color-navbar-bg:            rgba(15, 23, 42, 0.85);
+    --color-navbar-bg-scrolled:   rgba(15, 23, 42, 0.95);
+    --color-navbar-mobile-bg:     rgba(15, 23, 42, 0.97);
+    --shadow-sm:                  0 1px 3px rgba(0, 0, 0, 0.35);
+    --shadow-md:                  0 4px 12px rgba(0, 0, 0, 0.45);
+    --shadow-lg:                  0 8px 24px rgba(0, 0, 0, 0.50);
+    --shadow-xl:                  0 16px 48px rgba(0, 0, 0, 0.60);
+    --shadow-card:                0 2px 16px rgba(0, 0, 0, 0.40);
+  }
+}
+
+/* Manual dark mode (toggle) */
+html[data-theme="dark"] {
+  --color-bg:                   #0f172a;
+  --color-text:                 rgba(248, 250, 252, 0.90);
+  --color-text-muted:           #94a3b8;
+  --color-text-light:           #64748b;
+  --color-border:               #334155;
+  --color-border-light:         #1e293b;
+  --color-surface:              #1e293b;
+  --color-green-light:          rgba(34, 197, 94, 0.15);
+  --color-overlay-hover:        rgba(255, 255, 255, 0.08);
+  --color-navbar-bg:            rgba(15, 23, 42, 0.85);
+  --color-navbar-bg-scrolled:   rgba(15, 23, 42, 0.95);
+  --color-navbar-mobile-bg:     rgba(15, 23, 42, 0.97);
+  --shadow-sm:                  0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md:                  0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg:                  0 8px 24px rgba(0, 0, 0, 0.50);
+  --shadow-xl:                  0 16px 48px rgba(0, 0, 0, 0.60);
+  --shadow-card:                0 2px 16px rgba(0, 0, 0, 0.40);
+}
+
+/* Manual light mode — overrides OS dark preference */
+html[data-theme="light"] {
+  --color-bg:                   #f7fafc;
+  --color-text:                 #000000e6;
+  --color-text-muted:           #666666;
+  --color-text-light:           #999999;
+  --color-border:               #e2e8f0;
+  --color-border-light:         #f0f4f8;
+  --color-surface:              #ffffff;
+  --color-green-light:          #dcfce7;
+  --color-overlay-hover:        rgba(0, 0, 0, 0.05);
+  --color-navbar-bg:            rgba(247, 250, 252, 0.85);
+  --color-navbar-bg-scrolled:   rgba(247, 250, 252, 0.95);
+  --color-navbar-mobile-bg:     rgba(247, 250, 252, 0.97);
+  --shadow-sm:                  0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md:                  0 4px 12px rgba(0, 0, 0, 0.10);
+  --shadow-lg:                  0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl:                  0 16px 48px rgba(0, 0, 0, 0.15);
+  --shadow-card:                0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ────────────────────────────────────────────────
+   Print styles
+──────────────────────────────────────────────── */
+@media print {
+  nav, footer, .no-print { display: none; }
+  body { font-size: 12pt; color: #000; background: #fff; }
+  a[href]::after { content: " (" attr(href) ")"; }
 }

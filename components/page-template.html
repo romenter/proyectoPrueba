@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Title – Accuat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/shared-page.css" />
+  <!-- Uncomment if this page uses form components: -->
+  <!-- <link rel="stylesheet" href="assets/css/components/forms.css" /> -->
+</head>
+<body class="antialiased">
+
+  <!-- NAVIGATION -->
+  <!-- Copy from components/navbar.html and set the active link:
+       Active:   class="text-black font-semibold"
+       Inactive: class="hover:text-black transition-colors"
+  -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-4 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="flex items-center gap-10">
+      <a href="index.html" class="font-bold text-lg tracking-tight hover:opacity-80 transition-opacity">Accuat</a>
+      <div class="flex items-center gap-7 text-sm text-gray-600">
+        <a href="teams.html"  class="hover:text-black transition-colors">Teams</a>
+        <a href="about.html"  class="hover:text-black transition-colors">About</a>
+        <a href="blog.html"   class="hover:text-black transition-colors">Blog</a>
+        <a href="guides.html" class="hover:text-black transition-colors">Guides</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="login.html"  class="text-sm text-gray-600 hover:text-black transition-colors">Log in</a>
+      <a href="signup.html" class="text-sm bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-black transition-colors font-medium">Sign up for free</a>
+    </div>
+  </nav>
+
+  <!-- HEADER / HERO
+       Typical hero pattern — adjust copy and remove unused elements.
+       Background options: bg-hero-gradient | bg-dark-panel | bg-gray-50
+  -->
+  <section class="pt-36 pb-16 px-4 bg-hero-gradient">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl font-extrabold text-gray-900 mb-3">Page heading</h1>
+      <p class="text-gray-500 text-lg max-w-xl">One-line description of what this page is about.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT
+       Add <section> blocks below. Alternate bg-white / bg-gray-50 between sections.
+
+       Common section pattern:
+       <section class="py-16 px-4 bg-white">
+         <div class="max-w-4xl mx-auto">
+           <h2 class="text-xl font-extrabold text-gray-900 mb-6">Section title</h2>
+           ...content...
+         </div>
+       </section>
+  -->
+
+  <!-- CTA (optional dark panel at the bottom) -->
+  <section class="py-16 px-4 text-center bg-dark-panel">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-2xl font-extrabold text-white mb-3">Call to action heading</h2>
+      <p class="text-white/60 text-sm mb-6">Supporting line.</p>
+      <a href="#" class="inline-block bg-white text-gray-900 font-semibold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+        CTA button
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-10 bg-gray-950 text-gray-500">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="text-white font-bold text-lg">Accuat</a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="#" class="hover:text-gray-300 transition-colors">Privacy</a>
+        <a href="#" class="hover:text-gray-300 transition-colors">Terms</a>
+        <a href="#" class="hover:text-gray-300 transition-colors">Contact</a>
+      </div>
+      <span class="text-sm">© 2024 Accuat</span>
+    </div>
+  </footer>
+
+  <!-- JS — only include if this page has interactive components -->
+  <!-- <script src="assets/js/components/ui.js" defer></script> -->
+
+</body>
+</html>

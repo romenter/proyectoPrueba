@@ -44,7 +44,7 @@
 }
 
 .features__card {
-  background: var(--color-white);
+  background: var(--color-surface);
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-card);
   padding: 1.5rem;
@@ -89,7 +89,7 @@
 
 /* Mini invoice preview */
 .features__mini-invoice {
-  background: var(--color-white);
+  background: var(--color-surface);
   border-radius: var(--radius-lg);
   padding: 0.75rem;
   box-shadow: var(--shadow-sm);
@@ -143,7 +143,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  background: var(--color-white);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   padding: 0.25rem 0.625rem;

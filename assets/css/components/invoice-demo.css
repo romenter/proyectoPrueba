@@ -27,7 +27,7 @@
 }
 
 .invoice-demo__card {
-  background: var(--color-white);
+  background: var(--color-surface);
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-xl);
   padding: 1.5rem;
@@ -212,3 +212,9 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .invoice-demo__status--online { color: #86efac; }
+}
+
+html[data-theme="dark"] .invoice-demo__status--online { color: #86efac; }
