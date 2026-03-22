@@ -36,14 +36,14 @@
   color: var(--color-text);
   border: 1.5px solid var(--color-border);
 }
-.btn--secondary:hover { background: rgba(0,0,0,0.04); }
+.btn--secondary:hover { background: var(--color-overlay-hover); }
 
 /* Ghost — no border */
 .btn--ghost {
   background: transparent;
   color: var(--color-text-muted);
 }
-.btn--ghost:hover { color: var(--color-text); background: rgba(0,0,0,0.04); }
+.btn--ghost:hover { color: var(--color-text); background: var(--color-overlay-hover); }
 
 /* CTA signup */
 .btn--signup {

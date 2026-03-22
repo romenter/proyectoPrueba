@@ -47,7 +47,7 @@
 
 .benefits__float-invoice {
   position: absolute;
-  background: var(--color-white);
+  background: var(--color-surface);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xl);
   padding: 1rem;

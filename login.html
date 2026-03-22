@@ -4,35 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Log in – Accuat</title>
+  <script>(function(){var t=localStorage.getItem('accuat-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-    .card-shadow { box-shadow: 0 8px 40px rgba(0,0,0,0.10); }
-    input:focus { outline: none; border-color: #111; }
-    .floating { animation: float 5s ease-in-out infinite; }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/shared-page.css" />
 </head>
-<body class="antialiased min-h-screen flex" style="background: #f7fafc;">
+<body class="antialiased min-h-screen flex">
 
   <!-- Left panel: form -->
   <div class="flex-1 flex flex-col justify-between px-8 py-10 min-h-screen max-w-lg mx-auto w-full">
 
     <!-- Logo -->
-    <a href="index.html" class="font-bold text-lg tracking-tight text-gray-900 hover:opacity-70 transition-opacity">
-      Accuat
-    </a>
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="font-bold text-lg tracking-tight text-gray-900 hover:opacity-70 transition-opacity">
+        Accuat
+      </a>
+      <button onclick="toggleTheme()" class="w-8 h-8 flex items-center justify-center rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-colors" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon--sun" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.5"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="theme-toggle__icon--moon" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
 
     <!-- Form -->
     <div class="w-full max-w-sm mx-auto">
       <h1 class="text-3xl font-extrabold text-gray-900 mb-1">Welcome back</h1>
       <p class="text-gray-400 text-sm mb-8">Log in to your Accuat account.</p>
 
-      <form onsubmit="return false;" class="flex flex-col gap-4">
+      <form id="login-form" data-prevent-submit class="flex flex-col gap-4">
 
         <!-- Email -->
         <div>
@@ -60,7 +57,7 @@
             />
             <button
               type="button"
-              onclick="togglePassword('password', this)"
+              data-password-toggle="password"
               class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
               aria-label="Toggle password visibility"
             >
@@ -116,16 +113,16 @@
   </div>
 
   <!-- Right panel: decorative -->
-  <div class="hidden lg:flex flex-1 items-center justify-center relative overflow-hidden" style="background: linear-gradient(135deg, #0a1628 0%, #0e2145 60%, #003a5c 100%);">
+  <div class="hidden lg:flex flex-1 items-center justify-center relative overflow-hidden bg-auth-panel">
 
     <!-- Dot grid texture -->
-    <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 28px 28px;"></div>
+    <div class="absolute inset-0 bg-dot-grid"></div>
 
     <!-- Floating invoice card -->
     <div class="relative z-10 flex flex-col items-center gap-6">
 
-      <div class="floating" style="animation-delay: 0s;">
-        <div class="bg-white rounded-2xl p-6 w-72" style="box-shadow: 0 20px 60px rgba(0,0,0,0.4);">
+      <div class="floating floating--delay-0">
+        <div class="bg-white rounded-2xl p-6 w-72 card-shadow-heavy">
           <div class="flex items-center justify-between mb-4">
             <div>
               <div class="text-xs text-gray-400 mb-0.5">Invoice #0089</div>
@@ -141,7 +138,7 @@
         </div>
       </div>
 
-      <div class="floating" style="animation-delay: 1.5s;">
+      <div class="floating floating--delay-1_5">
         <div class="bg-white/10 backdrop-blur-sm rounded-2xl px-5 py-3 flex items-center gap-3 border border-white/10">
           <span class="w-8 h-8 rounded-full bg-green-400 flex items-center justify-center text-white text-sm font-bold">✓</span>
           <div>
@@ -162,14 +159,8 @@
     </div>
   </div>
 
-  <script>
-    function togglePassword(inputId, btn) {
-      const input = document.getElementById(inputId);
-      const isText = input.type === 'text';
-      input.type = isText ? 'password' : 'text';
-      btn.querySelector('svg').style.opacity = isText ? '1' : '0.4';
-    }
-  </script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/components/ui.js" defer></script>
 
 </body>
 </html>

@@ -29,7 +29,7 @@
 
 /* Letter card */
 .letter-cta__card {
-  background: var(--color-white);
+  background: var(--color-surface);
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-xl);
   padding: 2.5rem 3rem;

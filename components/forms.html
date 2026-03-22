@@ -1,0 +1,129 @@
+<!-- ============================================================
+     components/forms.html — Variantes de formulario reutilizables
+     ============================================================ -->
+
+<!-- ── Input de texto básico ─────────────────────────────────── -->
+<div>
+  <label class="form-label" for="example-text">Nombre</label>
+  <input id="example-text" type="text" placeholder="Bella Garcia" class="form-input" />
+</div>
+
+<!-- ── Input de email ────────────────────────────────────────── -->
+<div>
+  <label class="form-label" for="example-email">Correo electrónico</label>
+  <input id="example-email" type="email" placeholder="you@company.com" class="form-input" />
+</div>
+
+<!-- ── Input con error ───────────────────────────────────────── -->
+<div>
+  <label class="form-label" for="example-error">Email</label>
+  <input
+    id="example-error"
+    type="email"
+    value="not-an-email"
+    aria-describedby="example-error-msg"
+    class="form-input"
+    style="border-color: #ef4444;"
+  />
+  <p id="example-error-msg" class="form-error" role="alert">Ingresa un correo válido.</p>
+</div>
+
+<!-- ── Input con éxito ───────────────────────────────────────── -->
+<div>
+  <label class="form-label" for="example-success">Email</label>
+  <input
+    id="example-success"
+    type="email"
+    value="bella@marble.studio"
+    aria-describedby="example-success-msg"
+    class="form-input"
+    style="border-color: #22c55e;"
+  />
+  <p id="example-success-msg" class="form-success">Email verificado.</p>
+</div>
+
+<!-- ── Input de password con toggle ─────────────────────────── -->
+<div>
+  <label class="form-label" for="example-password">Contraseña</label>
+  <div class="relative">
+    <input
+      id="example-password"
+      type="password"
+      placeholder="••••••••"
+      class="form-input"
+    />
+    <button
+      type="button"
+      data-password-toggle="example-password"
+      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+      aria-label="Toggle password visibility"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7
+             -1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- ── Barra de fortaleza de contraseña ─────────────────────── -->
+<div class="flex gap-1 mt-2">
+  <div class="strength-bar" id="bar1"></div>
+  <div class="strength-bar" id="bar2"></div>
+  <div class="strength-bar" id="bar3"></div>
+  <div class="strength-bar" id="bar4"></div>
+</div>
+
+<!-- ── Select ────────────────────────────────────────────────── -->
+<div>
+  <label class="form-label" for="example-select">País</label>
+  <select id="example-select" class="form-input">
+    <option value="">Selecciona un país</option>
+    <option value="ar">Argentina</option>
+    <option value="in">India</option>
+    <option value="us">United States</option>
+  </select>
+</div>
+
+<!-- ── Checkbox ──────────────────────────────────────────────── -->
+<label class="flex items-start gap-2.5 cursor-pointer">
+  <input type="checkbox" class="mt-0.5 w-4 h-4 rounded border-gray-300 flex-shrink-0" />
+  <span class="text-xs text-gray-500 leading-relaxed">
+    Acepto los <a href="#" class="text-gray-800 font-semibold hover:underline">Términos de Servicio</a>
+    y la <a href="#" class="text-gray-800 font-semibold hover:underline">Política de Privacidad</a>
+  </span>
+</label>
+
+<!-- ── Radio buttons (grilla 2 col) ─────────────────────────── -->
+<div>
+  <label class="form-label">Uso principal</label>
+  <div class="grid grid-cols-2 gap-2">
+    <label class="flex items-center gap-2 bg-white border border-gray-200 rounded-xl px-3 py-2.5 cursor-pointer hover:border-gray-400 transition-colors text-xs font-medium text-gray-700">
+      <input type="radio" name="use-case-demo" value="freelance" class="w-3.5 h-3.5" /> Freelancing
+    </label>
+    <label class="flex items-center gap-2 bg-white border border-gray-200 rounded-xl px-3 py-2.5 cursor-pointer hover:border-gray-400 transition-colors text-xs font-medium text-gray-700">
+      <input type="radio" name="use-case-demo" value="agency" class="w-3.5 h-3.5" /> Agencia
+    </label>
+  </div>
+</div>
+
+<!-- ── Step indicators (flujo multi-paso) ───────────────────── -->
+<div class="flex items-center gap-2">
+  <div class="flex items-center gap-1.5">
+    <div class="w-6 h-6 rounded-full step-active flex items-center justify-center text-xs font-bold">1</div>
+    <span class="text-xs font-semibold text-gray-800">Cuenta</span>
+  </div>
+  <div class="flex-1 h-px bg-gray-200"></div>
+  <div class="flex items-center gap-1.5">
+    <div class="w-6 h-6 rounded-full step-done flex items-center justify-center text-xs font-bold">✓</div>
+    <span class="text-xs font-semibold text-green-600">Perfil</span>
+  </div>
+  <div class="flex-1 h-px bg-gray-200"></div>
+  <div class="flex items-center gap-1.5">
+    <div class="w-6 h-6 rounded-full step-idle flex items-center justify-center text-xs font-bold">3</div>
+    <span class="text-xs font-semibold text-gray-400">Listo</span>
+  </div>
+</div>

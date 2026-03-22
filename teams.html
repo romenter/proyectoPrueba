@@ -4,12 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teams – Accuat</title>
+  <script>(function(){var t=localStorage.getItem('accuat-theme');if(t)document.documentElement.setAttribute('data-theme',t);})();</script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-    body { font-family: 'Inter', sans-serif; background: #f7fafc; }
-    .card-shadow { box-shadow: 0 8px 40px rgba(0,0,0,0.10); }
-  </style>
+  <link rel="stylesheet" href="assets/css/shared-page.css" />
 </head>
 <body class="antialiased">
 
@@ -25,13 +22,17 @@
       </div>
     </div>
     <div class="flex items-center gap-4">
+      <button onclick="toggleTheme()" class="w-8 h-8 flex items-center justify-center rounded-full text-gray-500 hover:text-gray-900 hover:bg-gray-100 transition-colors" aria-label="Toggle dark mode">
+        <svg class="theme-toggle__icon--sun" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.5"/><path stroke-linecap="round" d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="theme-toggle__icon--moon" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
       <a href="login.html" class="text-sm text-gray-600 hover:text-black transition-colors">Log in</a>
       <a href="signup.html" class="text-sm bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-black transition-colors font-medium">Sign up for free</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="pt-36 pb-20 px-4 text-center" style="background: linear-gradient(160deg, #eef4fb 0%, #f7fafc 60%, #eef4fb 100%);">
+  <section class="pt-36 pb-20 px-4 text-center bg-hero-gradient">
     <div class="max-w-3xl mx-auto">
       <span class="inline-flex items-center gap-2 bg-white rounded-full px-3 py-1.5 text-xs text-gray-500 card-shadow mb-6">
         <span class="w-2 h-2 rounded-full bg-blue-400"></span>
@@ -90,7 +91,7 @@
   </section>
 
   <!-- FEATURES LIST -->
-  <section class="py-20 px-4" style="background: #f7fafc;">
+  <section class="py-20 px-4 bg-gray-50">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-12">Everything your team needs</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -140,7 +141,7 @@
   </section>
 
   <!-- CTA -->
-  <section class="py-20 px-4 text-center" style="background: linear-gradient(135deg, #0a1628 0%, #0e2145 100%);">
+  <section class="py-20 px-4 text-center bg-dark-panel">
     <div class="max-w-xl mx-auto">
       <h2 class="text-3xl font-extrabold text-white mb-4">Ready to bring your team?</h2>
       <p class="text-white/60 mb-8">Set up your team workspace in minutes. No credit card required.</p>
@@ -163,5 +164,6 @@
     </div>
   </footer>
 
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
