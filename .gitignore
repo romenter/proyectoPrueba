@@ -38,3 +38,4 @@ tmp/
 
 # Screenshots generadas durante desarrollo
 screenshot_*.png
+screenshot*.png
