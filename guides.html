@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guides – Accuat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    body { font-family: 'Inter', sans-serif; background: #f7fafc; }
+    .card-shadow { box-shadow: 0 8px 40px rgba(0,0,0,0.10); }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-4 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="flex items-center gap-10">
+      <a href="index.html" class="font-bold text-lg tracking-tight hover:opacity-80 transition-opacity">Accuat</a>
+      <div class="flex items-center gap-7 text-sm text-gray-600">
+        <a href="teams.html" class="hover:text-black transition-colors">Teams</a>
+        <a href="about.html" class="hover:text-black transition-colors">About</a>
+        <a href="blog.html" class="hover:text-black transition-colors">Blog</a>
+        <a href="guides.html" class="text-black font-semibold">Guides</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="login.html" class="text-sm text-gray-600 hover:text-black transition-colors">Log in</a>
+      <a href="signup.html" class="text-sm bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-black transition-colors font-medium">Sign up for free</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="pt-36 pb-12 px-4" style="background: linear-gradient(160deg, #eef4fb 0%, #f7fafc 60%, #eef4fb 100%);">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl font-extrabold text-gray-900 mb-3">Guides</h1>
+      <p class="text-gray-500 text-lg max-w-xl">Step-by-step walkthroughs to help you get the most out of Accuat.</p>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <section class="py-8 px-4 bg-white border-b border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <div class="relative max-w-md">
+        <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        <input type="text" placeholder="Search guides..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-gray-400 bg-gray-50" />
+      </div>
+    </div>
+  </section>
+
+  <!-- GETTING STARTED -->
+  <section class="py-14 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xl font-extrabold text-gray-900 mb-6">Getting started</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        <a href="#" class="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-gray-300 transition-colors group">
+          <div class="w-9 h-9 rounded-xl bg-blue-100 flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 text-sm mb-1 group-hover:underline">Send your first invoice</h3>
+          <p class="text-xs text-gray-400">From account setup to sending your first invoice in under 5 minutes.</p>
+          <div class="mt-3 text-xs text-blue-500 font-semibold">5 min read →</div>
+        </a>
+
+        <a href="#" class="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-gray-300 transition-colors group">
+          <div class="w-9 h-9 rounded-xl bg-green-100 flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11v6h2v-6h-2zm0-4v2h2V7h-2z"/></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 text-sm mb-1 group-hover:underline">Connect your bank account</h3>
+          <p class="text-xs text-gray-400">How to link your bank or crypto wallet to receive payments directly.</p>
+          <div class="mt-3 text-xs text-green-500 font-semibold">8 min read →</div>
+        </a>
+
+        <a href="#" class="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-gray-300 transition-colors group">
+          <div class="w-9 h-9 rounded-xl bg-purple-100 flex items-center justify-center mb-3">
+            <svg class="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+          </div>
+          <h3 class="font-bold text-gray-900 text-sm mb-1 group-hover:underline">Add your team members</h3>
+          <p class="text-xs text-gray-400">Invite teammates, set roles, and manage permissions across your workspace.</p>
+          <div class="mt-3 text-xs text-purple-500 font-semibold">4 min read →</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INVOICING -->
+  <section class="py-14 px-4" style="background: #f7fafc;">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xl font-extrabold text-gray-900 mb-6">Invoicing</h2>
+      <div class="flex flex-col gap-3">
+
+        <a href="#" class="bg-white rounded-2xl p-5 border border-gray-100 hover:border-gray-300 transition-colors flex items-center justify-between group">
+          <div class="flex items-center gap-4">
+            <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm group-hover:underline">How to customise your invoice template</div>
+              <div class="text-xs text-gray-400 mt-0.5">Logos, colors, fonts, and custom fields</div>
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="#" class="bg-white rounded-2xl p-5 border border-gray-100 hover:border-gray-300 transition-colors flex items-center justify-between group">
+          <div class="flex items-center gap-4">
+            <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm group-hover:underline">Setting up automatic payment reminders</div>
+              <div class="text-xs text-gray-400 mt-0.5">Schedule reminders so you never have to chase a client</div>
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="#" class="bg-white rounded-2xl p-5 border border-gray-100 hover:border-gray-300 transition-colors flex items-center justify-between group">
+          <div class="flex items-center gap-4">
+            <div class="w-8 h-8 rounded-lg bg-yellow-50 flex items-center justify-center flex-shrink-0">
+              <svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm group-hover:underline">Accepting partial payments and instalments</div>
+              <div class="text-xs text-gray-400 mt-0.5">Let clients pay in stages while you track progress</div>
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PAYMENTS & CURRENCIES -->
+  <section class="py-14 px-4 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-xl font-extrabold text-gray-900 mb-6">Payments & currencies</h2>
+      <div class="flex flex-col gap-3">
+
+        <a href="#" class="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-gray-300 transition-colors flex items-center justify-between group">
+          <div class="flex items-center gap-4">
+            <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
+              <span class="text-base">🌍</span>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm group-hover:underline">Sending invoices in multiple currencies</div>
+              <div class="text-xs text-gray-400 mt-0.5">USD, EUR, GBP, INR, and 50+ more supported</div>
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="#" class="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-gray-300 transition-colors flex items-center justify-between group">
+          <div class="flex items-center gap-4">
+            <div class="w-8 h-8 rounded-lg bg-orange-50 flex items-center justify-center flex-shrink-0">
+              <span class="text-base">₿</span>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm group-hover:underline">How to accept USDC and USDT payments</div>
+              <div class="text-xs text-gray-400 mt-0.5">Enable crypto payments for your clients in one click</div>
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="#" class="bg-gray-50 rounded-2xl p-5 border border-gray-100 hover:border-gray-300 transition-colors flex items-center justify-between group">
+          <div class="flex items-center gap-4">
+            <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
+              <span class="text-base">⚡</span>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900 text-sm group-hover:underline">Getting paid same-day: how it works</div>
+              <div class="text-xs text-gray-400 mt-0.5">The mechanics behind instant payouts and settlement</div>
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 px-4 text-center" style="background: linear-gradient(135deg, #0a1628 0%, #0e2145 100%);">
+    <div class="max-w-xl mx-auto">
+      <h2 class="text-2xl font-extrabold text-white mb-3">Can't find what you need?</h2>
+      <p class="text-white/60 text-sm mb-6">Our support team is available 7 days a week to help you out.</p>
+      <a href="#" class="inline-block bg-white text-gray-900 font-semibold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+        Contact support
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-10 bg-gray-950 text-gray-500">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="text-white font-bold text-lg">Accuat</a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="#" class="hover:text-gray-300 transition-colors">Privacy</a>
+        <a href="#" class="hover:text-gray-300 transition-colors">Terms</a>
+        <a href="#" class="hover:text-gray-300 transition-colors">Contact</a>
+      </div>
+      <span class="text-sm">© 2024 Accuat</span>
+    </div>
+  </footer>
+
+</body>
+</html>

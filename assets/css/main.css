@@ -1,0 +1,189 @@
+/* ============================================================
+   main.css — Variables globales, reset y estilos base
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@import 'components/navbar.css';
+@import 'components/hero.css';
+@import 'components/benefits.css';
+@import 'components/invoice-demo.css';
+@import 'components/pricing.css';
+@import 'components/currency.css';
+@import 'components/features.css';
+@import 'components/letter-cta.css';
+@import 'components/footer.css';
+@import 'components/buttons.css';
+@import 'components/cards.css';
+
+/* ────────────────────────────────────────────────
+   Variables CSS
+──────────────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-bg:           #f7fafc;
+  --color-text:         #000000e6;
+  --color-text-muted:   #666666;
+  --color-text-light:   #999999;
+  --color-navy:         #004370;
+  --color-navy-dark:    #002a47;
+  --color-navy-deep:    #001e33;
+  --color-white:        #ffffff;
+  --color-black:        #000000;
+  --color-border:       #e2e8f0;
+  --color-border-light: #f0f4f8;
+  --color-green:        #22c55e;
+  --color-green-light:  #dcfce7;
+  --color-blue-accent:  #3b82f6;
+  --color-yellow:       #fbbf24;
+  --color-yellow-note:  #fde68a;
+
+  /* Typography */
+  --font-base:          'Inter', sans-serif;
+  --text-xs:            0.75rem;
+  --text-sm:            0.875rem;
+  --text-base:          1rem;
+  --text-lg:            1.125rem;
+  --text-xl:            1.25rem;
+  --text-2xl:           1.5rem;
+  --text-3xl:           1.875rem;
+  --text-4xl:           2.25rem;
+  --text-5xl:           3rem;
+  --text-6xl:           3.75rem;
+
+  /* Font weights */
+  --font-normal:        400;
+  --font-medium:        500;
+  --font-semibold:      600;
+  --font-bold:          700;
+  --font-extrabold:     800;
+  --font-black:         900;
+
+  /* Spacing */
+  --spacing-xs:         0.25rem;
+  --spacing-sm:         0.5rem;
+  --spacing-md:         1rem;
+  --spacing-lg:         1.5rem;
+  --spacing-xl:         2rem;
+  --spacing-2xl:        3rem;
+  --spacing-3xl:        4rem;
+  --spacing-section:    6rem;
+
+  /* Border radius */
+  --radius-sm:          0.25rem;
+  --radius-md:          0.5rem;
+  --radius-lg:          0.75rem;
+  --radius-xl:          1rem;
+  --radius-2xl:         1.5rem;
+  --radius-full:        9999px;
+
+  /* Shadows */
+  --shadow-sm:          0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:          0 4px 12px rgba(0,0,0,0.10);
+  --shadow-lg:          0 8px 24px rgba(0,0,0,0.12);
+  --shadow-xl:          0 16px 48px rgba(0,0,0,0.15);
+  --shadow-card:        0 2px 16px rgba(0,0,0,0.08);
+
+  /* Max widths */
+  --max-w-sm:           640px;
+  --max-w-md:           768px;
+  --max-w-lg:           1024px;
+  --max-w-xl:           1280px;
+
+  /* Transitions */
+  --transition-fast:    150ms ease;
+  --transition-base:    250ms ease;
+  --transition-slow:    400ms ease;
+}
+
+/* ────────────────────────────────────────────────
+   Reset
+──────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* ────────────────────────────────────────────────
+   Utilidades
+──────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-w-xl);
+  margin-inline: auto;
+  padding-inline: var(--spacing-lg);
+}
+
+.container--narrow {
+  max-width: var(--max-w-md);
+}
+
+.container--wide {
+  max-width: 1400px;
+}
+
+.section {
+  padding-block: var(--spacing-section);
+}
+
+.text-center { text-align: center; }
+.text-muted  { color: var(--color-text-muted); }
+
+/* ────────────────────────────────────────────────
+   Scroll animations
+──────────────────────────────────────────────── */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Only animate when JS is loaded */
+.js-loaded .animate-on-scroll {
+  /* already set above */
+}

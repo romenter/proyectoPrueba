@@ -1,0 +1,143 @@
+/* ============================================================
+   letter-cta.css
+   ============================================================ */
+
+.letter-cta {
+  background: linear-gradient(160deg, #003a5c 0%, #004370 40%, #005a8e 70%, #1a7a9e 100%);
+  padding-block: var(--spacing-section);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Subtle star/dot background texture */
+.letter-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.letter-cta__inner {
+  max-width: var(--max-w-xl);
+  margin-inline: auto;
+  padding-inline: var(--spacing-lg);
+  position: relative;
+  z-index: 2;
+}
+
+/* Letter card */
+.letter-cta__card {
+  background: var(--color-white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  padding: 2.5rem 3rem;
+  max-width: 520px;
+  margin-inline: auto;
+  position: relative;
+}
+
+.letter-cta__greeting {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.letter-cta__body {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.letter-cta__signature {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  font-style: italic;
+  font-weight: var(--font-medium);
+}
+
+/* Sticky note on letter */
+.letter-cta__sticky {
+  position: absolute;
+  right: -1.5rem;
+  top: 1.5rem;
+  background: var(--color-yellow-note);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1rem;
+  width: 130px;
+  box-shadow: var(--shadow-md);
+  transform: rotate(4deg);
+  font-size: 0.65rem;
+  color: #78350f;
+  line-height: 1.6;
+}
+
+.letter-cta__sticky-title {
+  font-weight: var(--font-bold);
+  margin-bottom: 0.25rem;
+  font-size: 0.7rem;
+}
+
+.letter-cta__sticky-sub {
+  font-size: 0.6rem;
+  opacity: 0.7;
+}
+
+/* Bottom tagline */
+.letter-cta__tagline {
+  text-align: center;
+  margin-top: 3rem;
+  color: var(--color-white);
+  font-size: clamp(var(--text-base), 2.5vw, var(--text-xl));
+  font-weight: var(--font-semibold);
+  max-width: 500px;
+  margin-inline: auto;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.letter-cta__tagline-cta {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.letter-cta__tagline-cta .btn--primary {
+  background: var(--color-white);
+  color: var(--color-text);
+}
+
+.letter-cta__tagline-cta .btn--primary:hover {
+  background: rgba(255,255,255,0.92);
+  opacity: 1;
+}
+
+/* Floating icon top right */
+.letter-cta__float-icon {
+  position: absolute;
+  right: 8%;
+  top: 12%;
+  width: 52px;
+  height: 52px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 639px) {
+  .letter-cta__card {
+    padding: 1.75rem 1.5rem;
+  }
+  .letter-cta__sticky {
+    position: static;
+    transform: rotate(2deg);
+    margin-top: 1.5rem;
+    margin-inline: auto;
+    display: block;
+  }
+}

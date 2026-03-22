@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment & secrets
+.env
+.env.*
+*.env
+secrets.*
+credentials.*
+config.local.*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/settings.json
+.idea/
+*.suo
+*.user
+
+# Build output
+dist/
+build/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temp / cache
+.cache/
+.temp/
+tmp/
+
+# Screenshots generadas durante desarrollo
+screenshot_*.png

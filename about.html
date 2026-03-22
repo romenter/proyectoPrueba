@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Accuat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    body { font-family: 'Inter', sans-serif; background: #f7fafc; }
+    .card-shadow { box-shadow: 0 8px 40px rgba(0,0,0,0.10); }
+    .sticky-note {
+      background: #fde68a;
+      box-shadow: 2px 4px 12px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-4 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="flex items-center gap-10">
+      <a href="index.html" class="font-bold text-lg tracking-tight hover:opacity-80 transition-opacity">Accuat</a>
+      <div class="flex items-center gap-7 text-sm text-gray-600">
+        <a href="teams.html" class="hover:text-black transition-colors">Teams</a>
+        <a href="about.html" class="text-black font-semibold">About</a>
+        <a href="blog.html" class="hover:text-black transition-colors">Blog</a>
+        <a href="guides.html" class="hover:text-black transition-colors">Guides</a>
+      </div>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="login.html" class="text-sm text-gray-600 hover:text-black transition-colors">Log in</a>
+      <a href="signup.html" class="text-sm bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-black transition-colors font-medium">Sign up for free</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="pt-36 pb-20 px-4 text-center" style="background: linear-gradient(160deg, #eef4fb 0%, #f7fafc 60%, #eef4fb 100%);">
+    <div class="max-w-2xl mx-auto">
+      <h1 class="text-5xl font-extrabold text-gray-900 leading-tight mb-5">
+        We're on a mission to make getting paid simple
+      </h1>
+      <p class="text-lg text-gray-500 mb-6">
+        Accuat started because we were tired of chasing payments. So we built the invoice we always wanted — and opened it to everyone.
+      </p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex flex-col gap-10">
+
+        <div class="flex gap-8 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg">1</div>
+          <div>
+            <h3 class="font-bold text-gray-900 text-lg mb-2">The problem we lived</h3>
+            <p class="text-gray-500 leading-relaxed">Freelancers and small teams were spending hours chasing clients for payments. Existing tools were either too complex or too expensive — or both. We knew there was a better way.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-8 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-lg">2</div>
+          <div>
+            <h3 class="font-bold text-gray-900 text-lg mb-2">What we built</h3>
+            <p class="text-gray-500 leading-relaxed">A beautiful, flexible invoice that your clients actually want to open and pay. Multi-currency, crypto-ready, and designed with the payer's experience in mind — not just the sender's.</p>
+          </div>
+        </div>
+
+        <div class="flex gap-8 items-start">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg">3</div>
+          <div>
+            <h3 class="font-bold text-gray-900 text-lg mb-2">Where we're going</h3>
+            <p class="text-gray-500 leading-relaxed">We're building the global payment layer for independent workers. From Buenos Aires to Bangalore, Accuat makes cross-border payments feel local.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="py-16 px-4" style="background: #f7fafc;">
+    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="bg-white rounded-2xl p-6 card-shadow">
+        <div class="text-3xl font-extrabold text-gray-900 mb-1">5K+</div>
+        <div class="text-sm text-gray-400">Businesses</div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 card-shadow">
+        <div class="text-3xl font-extrabold text-gray-900 mb-1">100+</div>
+        <div class="text-sm text-gray-400">Countries</div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 card-shadow">
+        <div class="text-3xl font-extrabold text-gray-900 mb-1">$42M</div>
+        <div class="text-sm text-gray-400">Processed</div>
+      </div>
+      <div class="bg-white rounded-2xl p-6 card-shadow">
+        <div class="text-3xl font-extrabold text-gray-900 mb-1">1%</div>
+        <div class="text-sm text-gray-400">Only fee</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-extrabold text-gray-900 mb-3">The people behind Accuat</h2>
+      <p class="text-gray-400 text-sm mb-12">A small team with a big obsession: making payments painless.</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-blue-200 mx-auto mb-3 flex items-center justify-center text-blue-700 font-bold text-xl">B</div>
+          <div class="font-semibold text-gray-900 text-sm">Bella Garcia</div>
+          <div class="text-xs text-gray-400">Founder & CEO</div>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-green-200 mx-auto mb-3 flex items-center justify-center text-green-700 font-bold text-xl">M</div>
+          <div class="font-semibold text-gray-900 text-sm">Marco Silva</div>
+          <div class="text-xs text-gray-400">CTO</div>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-purple-200 mx-auto mb-3 flex items-center justify-center text-purple-700 font-bold text-xl">A</div>
+          <div class="font-semibold text-gray-900 text-sm">Aisha Nkrumah</div>
+          <div class="text-xs text-gray-400">Head of Design</div>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-yellow-200 mx-auto mb-3 flex items-center justify-center text-yellow-700 font-bold text-xl">R</div>
+          <div class="font-semibold text-gray-900 text-sm">Ravi Patel</div>
+          <div class="text-xs text-gray-400">Head of Growth</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LETTER -->
+  <section class="py-20 px-4 relative overflow-hidden" style="background: linear-gradient(135deg, #0a1628 0%, #0e2145 100%);">
+    <div class="max-w-xl mx-auto text-center">
+      <p class="text-white/80 text-xl font-medium leading-relaxed mb-8">
+        "We believe that getting paid should be the easiest part of running a business."
+      </p>
+      <p class="text-white/40 text-sm italic">— Bella Garcia, Founder</p>
+      <a href="#" class="inline-block mt-10 bg-white text-gray-900 font-semibold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors">
+        Join us
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 px-10 bg-gray-950 text-gray-500">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="text-white font-bold text-lg">Accuat</a>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="#" class="hover:text-gray-300 transition-colors">Privacy</a>
+        <a href="#" class="hover:text-gray-300 transition-colors">Terms</a>
+        <a href="#" class="hover:text-gray-300 transition-colors">Contact</a>
+      </div>
+      <span class="text-sm">© 2024 Accuat</span>
+    </div>
+  </footer>
+
+</body>
+</html>

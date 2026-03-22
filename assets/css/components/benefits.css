@@ -1,0 +1,130 @@
+/* ============================================================
+   benefits.css
+   ============================================================ */
+
+.benefits {
+  background: var(--color-bg);
+  padding-block: var(--spacing-section);
+  overflow: hidden;
+  position: relative;
+}
+
+.benefits__inner {
+  max-width: var(--max-w-xl);
+  margin-inline: auto;
+  padding-inline: var(--spacing-lg);
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.benefits__title {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: var(--font-black);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: var(--color-text);
+  max-width: 580px;
+  margin-inline: auto;
+  margin-bottom: 1.25rem;
+}
+
+.benefits__subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 400px;
+  margin-inline: auto;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+/* Floating UI elements around the section */
+.benefits__floats {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.benefits__float-invoice {
+  position: absolute;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  padding: 1rem;
+  width: clamp(140px, 15vw, 200px);
+}
+
+.benefits__float-invoice--left {
+  left: 2%;
+  top: 20%;
+  transform: rotate(-4deg);
+}
+
+.benefits__float-invoice--right {
+  right: 2%;
+  top: 15%;
+  transform: rotate(3deg);
+}
+
+/* Invoice card mini content */
+.benefits__invoice-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.625rem;
+}
+
+.benefits__invoice-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.benefits__invoice-name {
+  font-size: 0.65rem;
+  font-weight: var(--font-semibold);
+  line-height: 1.2;
+}
+
+.benefits__invoice-email {
+  font-size: 0.55rem;
+  color: var(--color-text-muted);
+}
+
+.benefits__invoice-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.55rem;
+  color: var(--color-text-muted);
+  padding: 0.2rem 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.benefits__invoice-row:last-child {
+  border-bottom: none;
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+  font-size: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+/* Sticky note float */
+.benefits__sticky-note {
+  position: absolute;
+  right: 6%;
+  bottom: 20%;
+  width: clamp(90px, 10vw, 130px);
+  background: var(--color-yellow-note);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  box-shadow: var(--shadow-md);
+  transform: rotate(5deg);
+  font-size: 0.6rem;
+  color: #78350f;
+  line-height: 1.5;
+}
+
+@media (max-width: 767px) {
+  .benefits__floats { display: none; }
+}

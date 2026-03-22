@@ -1,0 +1,98 @@
+/* ============================================================
+   pricing.css
+   ============================================================ */
+
+.pricing {
+  background: var(--color-bg);
+  padding-block: var(--spacing-section);
+}
+
+.pricing__inner {
+  max-width: var(--max-w-xl);
+  margin-inline: auto;
+  padding-inline: var(--spacing-lg);
+  text-align: center;
+}
+
+.pricing__title {
+  font-size: clamp(1.875rem, 4vw, 2.75rem);
+  font-weight: var(--font-black);
+  letter-spacing: -0.025em;
+  margin-bottom: 2.5rem;
+  color: var(--color-text);
+}
+
+.pricing__card {
+  background: var(--color-white);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  padding: 2rem 2.5rem;
+  max-width: 360px;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.pricing__rates {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.pricing__rate-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.375rem;
+}
+
+.pricing__rate-percent {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-black);
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.pricing__rate-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.pricing__rate-item--secondary .pricing__rate-percent {
+  font-size: var(--text-xl);
+  color: var(--color-text-muted);
+}
+
+.pricing__cta {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.pricing__features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.pricing__feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.pricing__feature-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--color-green);
+}
+
+.pricing__feature-icon--check::before {
+  content: '✓';
+  font-size: 0.7rem;
+  font-weight: var(--font-bold);
+}
